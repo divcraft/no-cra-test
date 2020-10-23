@@ -4,6 +4,7 @@
   "description": "React App created without create-react-app",
   "main": "__server/index.js",
   "scripts": {
+    "start": "node __server/index.js",
     "client": "webpack-dev-server --open",
     "server": "nodemon __server/index.js",
     "dev": "concurrently \"npm run server\" \"npm run client\"",

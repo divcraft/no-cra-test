@@ -1,0 +1,45 @@
+{
+  "name": "no-cra-test",
+  "version": "1.0.0",
+  "description": "React App created without create-react-app",
+  "main": "__server/index.js",
+  "scripts": {
+    "client": "webpack-dev-server --open",
+    "server": "nodemon __server/index.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "build": "webpack",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run build"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "concurrently": "^5.3.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.9",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "css-loader": "^2.1.1",
+    "html-webpack-plugin": "^3.2.0",
+    "nodemon": "^2.0.6",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.1",
+    "webpack-dev-server": "^3.3.1"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
+  },
+  "keywords": [],
+  "author": "div-craft.com",
+  "license": "ISC"
+}

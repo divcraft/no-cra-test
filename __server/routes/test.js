@@ -19,11 +19,12 @@ router.get('/show-test', (req, res) => {
 
 router.post('/add-test', (req, res) => {
   const { content } = req.body;
+  console.log('from react')
   const testData = new Test({
     content,
   });
   testData.save((err) => {
-    const response = err ? 'Wystpił błąd przy aktualizacji bazy danych ;/' : `Baza danych uzupełniona! Dodano nowy wiersz: ${content}`;
+    const response = err ? err : `Baza danych uzupełniona! Dodano nowy wiersz: ${content}`;
     res.json({ response });
   });
 });

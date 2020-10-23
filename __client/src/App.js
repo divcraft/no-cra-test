@@ -16,8 +16,9 @@ export default function App() {
     fetch('http://localhost:5000/api/add-test', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ formContent }),
-    });
+      body: JSON.stringify({ content: formContent }),
+    })
+      .then(data => console.log('submit', data));
     setFormContent('');
     setDataUpdateFlague(!dataUpdateFlague);
   };

@@ -1,6 +1,6 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+var path = require('path');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+var UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 // const production = process.env.NODE_ENV === 'production'
 
@@ -38,6 +38,18 @@ module.exports = {
     ],
   },
   mode: 'development',
+  devServer: {
+    port: 3000,
+    open: true,
+    hot: true,
+    proxy: {
+      '/': {
+        target: 'http://localhost:5000',
+        secure: false,
+        changeOrigin: true,
+      },
+    },
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: '__client/public/index.html',

@@ -15,25 +15,24 @@ export default function App() {
   const handleSubmit = (e) => {
     if (!formContent) return;
     e.preventDefault();
-    fetch('http://localhost:5000/api/add-test', {
+    fetch('/api/add-test', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ content: formContent }),
-    })
-      .then(data => console.log('submit', data));
+    }).then((data) => console.log('submit', data));
     setFormContent('');
     setDataUpdateFlague(!dataUpdateFlague);
   };
 
   useEffect(() => {
-    fetch('http://localhost:5000/api')
+    fetch('/api')
       .then((response) => response.json())
       .then(({ message }) => setApi(message))
       // eslint-disable-next-line no-console
       .catch((err) => console.log('err:', err));
   }, []);
   useEffect(() => {
-    fetch('http://localhost:5000/api/show-test')
+    fetch('/api/show-test')
       .then((response) => response.json())
       .then((data) => setTest(data));
   }, [dataUpdateFlague]);
@@ -43,7 +42,9 @@ export default function App() {
       <div>{api}</div>
       <form action="get">
         <input type="text" value={formContent} onChange={handleChange} />
-        <button type="submit" onClick={handleSubmit}>Wyślij</button>
+        <button type="submit" onClick={handleSubmit}>
+          Wyślij
+        </button>
       </form>
       <ul>
         {test && test.map(({ _id, content }) => <li key={_id}>{content}</li>)}

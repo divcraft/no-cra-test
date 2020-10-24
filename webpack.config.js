@@ -45,17 +45,6 @@ module.exports = {
          favicon: '__client/public/favicon.ico',
          inject: 'body',
       }),
-      new MinifyHtmlWebpackPlugin({
-         src: './build',
-         dest: './build',
-         rules: {
-            collapseBooleanAttributes: true,
-            collapseWhitespace: true,
-            removeAttributeQuotes: true,
-            removeComments: true,
-            minifyJS: true,
-         }
-      })
    ],
    optimization: {
       minimize: true,

@@ -19,7 +19,7 @@ export default function App() {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ content: formContent }),
-    }).then((data) => console.log('submit', data));
+    }).then((data) => console.log('Submit', data));
     setFormContent('');
     setDataUpdateFlague(!dataUpdateFlague);
   };

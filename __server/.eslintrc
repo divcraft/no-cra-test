@@ -1,0 +1,11 @@
+{
+    "env": {
+        "commonjs": true,
+    },
+    "extends": [
+        "airbnb-base"
+    ],
+    "rules": {
+        // "global-require": "off"
+    }
+}

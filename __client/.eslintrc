@@ -1,0 +1,21 @@
+{
+    "env": {
+    },
+    "extends": [
+        "plugin:react/recommended",
+        "airbnb",
+        "prettier/react"
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+        // "react/jsx-filename-extension": "off"
+    }
+}

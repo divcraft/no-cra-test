@@ -3,20 +3,18 @@ const path = require('path');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
-const database = require('./database');
-const testRouter = require('./routes/test');
+const mongoose = require('./mongoose');
+const testRouter = require('./routes/api');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
 dotenv.config();
-database();
+mongoose();
 
-// middlewares
 app.use(cors());
 app.use(bodyParser.json());
 
-// Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('build'));
   app.get('/ ', (req, res) => {
@@ -26,5 +24,4 @@ if (process.env.NODE_ENV === 'production') {
 
 app.use('/api', testRouter);
 
-// eslint-disable-next-line no-console
-app.listen(PORT, () => console.log(`Server is listening at http://localhost:${PORT} ...`));
+app.listen(PORT);

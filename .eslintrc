@@ -1,0 +1,3 @@
+// eslint needs config file in root folder to proceed, even though it is empty
+// actual config can be found in __client & __server catalogs
+{}

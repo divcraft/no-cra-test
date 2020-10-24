@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import './style.css';
+import treeImg from '../public/img/tree.jpg';
 
 export default function App() {
   const [api, setApi] = useState('');
@@ -37,7 +39,7 @@ export default function App() {
   }, [dataUpdateFlague]);
   return (
     <>
-      <h1>Hello world!</h1>
+      <h1>Hello world!!</h1>
       <div>{api}</div>
       <form action="get">
         <input type="text" value={formContent} onChange={handleChange} />
@@ -46,6 +48,7 @@ export default function App() {
       <ul>
         {test && test.map(({ _id, content }) => <li key={_id}>{content}</li>)}
       </ul>
+      <img src={treeImg} alt="tree-public" />
     </>
   );
 }

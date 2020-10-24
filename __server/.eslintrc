@@ -1,6 +1,6 @@
 {
     "env": {
-        "commonjs": true,
+        "commonjs": true
     },
     "extends": [
         "airbnb-base"

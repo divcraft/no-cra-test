@@ -62,7 +62,7 @@
   "lint-staged": {
     "*.js": [
       "npx prettier --confix .prettierrc --write",
-      "eslint __client/ __server/ --fix",
+      "eslint --fix",
       "git add ."
     ]
   },

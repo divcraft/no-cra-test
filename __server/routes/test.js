@@ -24,7 +24,8 @@ router.post('/add-test', (req, res) => {
     content,
   });
   testData.save((err) => {
-    const response = err || `Baza danych uzupełniona! Dodano nowy wiersz: ${content}`;
+    const response =
+      err || `Baza danych uzupełniona! Dodano nowy wiersz: ${content}`;
     res.json({ response });
   });
 });

@@ -2,6 +2,8 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
+// const production = process.env.NODE_ENV === 'production'
+
 module.exports = {
    entry: './__client/src/index.js',
    output: {
@@ -35,14 +37,27 @@ module.exports = {
                   esModule: false
                }
             }
-         }
+         },
+         {
+            test: /favicon\.svg$/,
+            use: {
+               loader: 'file-loader',
+               options: {
+                  name: '[name].[ext]',
+                  outputPath: '/',
+                  publicPath: '/',
+                  emitFile: true,
+                  esModule: false
+               }
+            }
+         },
       ]
    },
    mode: 'development',
    plugins: [
       new HtmlWebpackPlugin({
          template: '__client/public/index.html',
-         favicon: '__client/public/favicon.ico',
+         favicon: '__client/public/favicon.svg',
          inject: 'body',
       }),
    ],

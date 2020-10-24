@@ -8,7 +8,7 @@
     "client": "webpack-dev-server --open",
     "server": "nodemon __server/index.js",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "build": "webpack",
+    "build": "webpack --mode=production",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run build"
   },
   "dependencies": {

@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 import { normalize } from 'styled-normalize';
 
-export const globalStyles = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
    ${normalize}
    body {
       background-color: ${({ theme: { colors } }) => colors.gray.dark};

@@ -1,1 +1,1 @@
-export { globalStyles, theme } from './styleConfig';
+export { GlobalStyle, theme } from './styleConfig';

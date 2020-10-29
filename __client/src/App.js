@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
-import { globalStyles as GlobalStyles, theme } from 'utils';
+import { GlobalStyle, theme } from 'utils';
 import configureStore from 'store';
 import { HomePage } from 'pages';
 
@@ -13,7 +13,7 @@ const RootApp = () => {
     <>
       <Provider store={store}>
         <ThemeProvider theme={theme}>
-          <GlobalStyles />
+          <GlobalStyle />
           <Router>
             <App />
           </Router>

@@ -42,6 +42,7 @@ module.exports = {
     port: 3000,
     open: true,
     hot: true,
+    overlay: true,
     proxy: {
       '/': {
         target: 'http://localhost:5000',

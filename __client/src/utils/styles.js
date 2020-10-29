@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 import { normalize } from 'styled-normalize';
 
-export default createGlobalStyle`
+export const GlobalStyles = createGlobalStyle`
    ${normalize}
    body {
       background-color: rgb(56, 56, 56);
@@ -17,3 +17,5 @@ export default createGlobalStyle`
       }
    }
 `;
+
+export const theme = {};

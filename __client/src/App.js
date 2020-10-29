@@ -1,19 +1,43 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Provider as StoreProvider, useDispatch } from 'react-redux';
+import { ThemeProvider } from 'styled-components';
+import configureStore from './store';
+import { GlobalStyles, theme } from './utils';
 import HomePage from './pages/HomePage';
-import GlobalStyles from './utils/globalStyles';
 
-const App = () => {
+import { increment, decrement } from './store/actions';
+
+const RootApp = () => {
   return (
     <>
       <GlobalStyles />
-      <Router>
-        <Route path="/" exact>
-          <HomePage />
-        </Route>
-      </Router>
+      <StoreProvider store={configureStore()}>
+        <ThemeProvider theme={theme}>
+          <Router>
+            <App />
+          </Router>
+        </ThemeProvider>
+      </StoreProvider>
     </>
   );
 };
 
-export default App;
+const App = () => {
+  const dispatch = useDispatch();
+  return (
+    <Switch>
+      <Route path="/" exact>
+        <HomePage />
+        <button type="button" onClick={() => dispatch(decrement())}>
+          -
+        </button>
+        <button type="button" onClick={() => dispatch(increment())}>
+          +
+        </button>
+      </Route>
+    </Switch>
+  );
+};
+
+export default RootApp;

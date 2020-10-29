@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import banner from './banner';
-import counter from './counter';
+import banner from './banner.reducer';
 
-export default combineReducers({
+const rootReducer = combineReducers({
   banner,
-  counter,
 });
+
+export default rootReducer;

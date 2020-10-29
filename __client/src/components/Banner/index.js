@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import logoImg from '../../../public/img/logo.svg';
-import { Container, Logo, Header, Describe, Footer } from './styles';
+import { Container, Logo, Header, Describe, Footer } from './style';
 
 const Banner = ({ api }) => {
   const { header, describe, author, link } = api;
@@ -13,7 +13,11 @@ const Banner = ({ api }) => {
       <Footer>
         <div>{author}</div>
         <div>
-          (<a href={`https://${link}`}>{link}</a>)
+          (
+          <a href={`https://${link}`} target="_blank" rel="noreferrer">
+            {link}
+          </a>
+          )
         </div>
       </Footer>
     </Container>

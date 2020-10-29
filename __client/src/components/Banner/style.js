@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  width: 75%;
+  width: 90%;
   max-width: 600px;
   text-align: center;
+  margin: 20px auto 0;
 `;
 
 export const Logo = styled.img`
@@ -13,7 +14,7 @@ export const Logo = styled.img`
 
 export const Header = styled.h1`
   font-size: 32px;
-  color: #518bff;
+  color: ${({ theme: { colors } }) => colors.blue};
 `;
 
 export const Describe = styled.p`
@@ -24,9 +25,9 @@ export const Describe = styled.p`
 export const Footer = styled.div`
   font-size: 20px;
   font-family: monospace;
-  color: #dddddd;
+  color: ${({ theme: { colors } }) => colors.gray.light};
   & div a {
-    color: #dddddd;
+    color: ${({ theme: { colors } }) => colors.gray.light};
     text-decoration: none;
   }
 `;

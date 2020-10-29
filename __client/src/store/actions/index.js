@@ -1,2 +1,1 @@
-export { getBannerApi } from './banner';
-export { increment, decrement } from './counter';
+export { getBannerApi } from './banner.actions';

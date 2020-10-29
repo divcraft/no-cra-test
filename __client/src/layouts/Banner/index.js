@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import logoImg from '../../../public/img/logo.svg';
+import logoImg from 'img/logo.svg';
 import { Container, Logo, Header, Describe, Footer } from './style';
 
 const Banner = ({ api }) => {

@@ -1,8 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import Banner from '../components/Banner';
-
-import { getBannerApi } from '../store/actions';
+import { Banner } from 'layouts';
+import { getBannerApi } from 'store/actions';
 
 const HomePage = () => {
   const api = useSelector((state) => state.banner);

@@ -2,9 +2,9 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
-import { globalStyles as GlobalStyles, theme } from './utils';
-import configureStore from './store';
-import HomePage from './pages/HomePage';
+import { globalStyles as GlobalStyles, theme } from 'utils';
+import configureStore from 'store';
+import { HomePage } from 'pages';
 
 const store = configureStore();
 
